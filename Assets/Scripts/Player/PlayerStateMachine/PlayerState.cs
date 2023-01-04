@@ -2,6 +2,7 @@ public class PlayerState
 {
     protected Player player;
     protected PlayerStateMachine stateMachine;
+    protected Core core;
 
     private string animationName;
 
@@ -11,6 +12,7 @@ public class PlayerState
         this.player = player;
         this.stateMachine = stateMachine;
         this.animationName = animationName;
+        core = player.Core;
     }
 
     public virtual void Enter()
@@ -29,6 +31,12 @@ public class PlayerState
     }
     
     public virtual void PhysicsUpdate()
+    {
+        
+    }
+
+
+    public virtual void UpdateState()
     {
         
     }
