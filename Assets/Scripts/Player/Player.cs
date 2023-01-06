@@ -17,10 +17,9 @@ public class Player : MonoBehaviour
     #region Components
     public Core Core { get; private set; }
     public Rigidbody2D RB { get; private set; }
-
-    #endregion
-    
     public Animator PlayerAnimator { get; private set; }
+    public PlayerInputHandler InputHandler { get; private set; }
+    #endregion
 
 
     public void Awake()
@@ -36,6 +35,7 @@ public class Player : MonoBehaviour
     {
         PlayerAnimator = GetComponent<Animator>();
         RB = GetComponent<Rigidbody2D>();
+        InputHandler = GetComponent<PlayerInputHandler>();
         
         StateMachine.Initialize(IdleState);
     }
