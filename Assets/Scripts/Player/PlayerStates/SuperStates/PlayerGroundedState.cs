@@ -42,8 +42,9 @@ public class PlayerGroundedState : PlayerState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        
-        // TODO: Update player input from input handler
+
+        xInput = player.InputHandler.NormInputX;
+        yInput = player.InputHandler.NormInputY;
     }
 
     public override void PhysicsUpdate()
