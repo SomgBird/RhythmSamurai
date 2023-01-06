@@ -16,7 +16,7 @@ public class Movement : CoreComponent
     {
         base.Awake();
 
-        RB = GetComponentInChildren<Rigidbody2D>();
+        RB = GetComponentInParent<Rigidbody2D>();
 
         FacingDirection = 1;
         CanSetVelocity = true;
