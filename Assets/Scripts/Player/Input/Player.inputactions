@@ -26,17 +26,6 @@
             ],
             "bindings": [
                 {
-                    "name": "1D Axis",
-                    "id": "04cbcb2f-f187-46db-8fab-4abb84bbd41b",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
                     "name": "2D Vector",
                     "id": "d1c03e2c-1784-4f75-ba2c-d03983d99a74",
                     "path": "2DVector",
@@ -109,7 +98,13 @@
         {
             "name": "Keyboard",
             "bindingGroup": "Keyboard",
-            "devices": []
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
         }
     ]
 }
