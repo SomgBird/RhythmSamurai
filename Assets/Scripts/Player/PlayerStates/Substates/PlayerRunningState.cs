@@ -21,7 +21,6 @@ public class PlayerRunningState : PlayerGroundedState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        Debug.Log("1111");
         
         Movement.CheckIfShouldFlip(xInput);
         Movement.SetVelocityX(3 * xInput);
