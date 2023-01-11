@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     #region StateMachine
     public PlayerStateMachine StateMachine { get; private set; }
     
+    [SerializeField] private PlayerData playerData;
     public PlayerIdleState IdleState { get; private set; } 
     public PlayerRunningState RunningState { get; private set; }
     
@@ -27,8 +28,8 @@ public class Player : MonoBehaviour
         Core = GetComponentInChildren<Core>();
         StateMachine = new PlayerStateMachine();
 
-        IdleState = new PlayerIdleState(this, StateMachine, "idle");
-        RunningState = new PlayerRunningState(this, StateMachine, "idle");
+        IdleState = new PlayerIdleState(this, StateMachine, playerData, "idle");
+        WalkState = new PlayerWalkState(this, StateMachine, playerData, "walk");
     }
 
     public void Start()
