@@ -3,15 +3,17 @@ public class PlayerState
     protected Player player;
     protected PlayerStateMachine stateMachine;
     protected Core core;
+    protected PlayerData playerData;
 
     private string animationName;
 
 
-    public PlayerState(Player player, PlayerStateMachine stateMachine, string animationName)
+    public PlayerState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animationName)
     {
         this.player = player;
         this.stateMachine = stateMachine;
         this.animationName = animationName;
+        this.playerData = playerData;
         core = player.Core;
     }
 

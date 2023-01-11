@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class PlayerRunningState : PlayerGroundedState
+public class PlayerWalkState : PlayerGroundedState
 {
-    public PlayerRunningState(Player player, PlayerStateMachine stateMachine, string animationName) 
-        : base(player, stateMachine, animationName)
+    public PlayerWalkState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animationName) 
+        : base(player, stateMachine, playerData, animationName)
     {
         
     }
@@ -23,7 +23,7 @@ public class PlayerRunningState : PlayerGroundedState
         base.LogicUpdate();
         
         Movement.CheckIfShouldFlip(xInput);
-        Movement.SetVelocityX(3 * xInput);
+        Movement.SetVelocityX(playerData.walkVelocity * xInput);
         
         if (xInput == 0)
             stateMachine.ChangeState(player.IdleState);

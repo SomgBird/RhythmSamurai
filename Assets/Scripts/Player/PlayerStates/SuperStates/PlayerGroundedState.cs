@@ -23,8 +23,8 @@ public class PlayerGroundedState : PlayerState
     private CollisionSenses collisionSenses;
     protected CollisionSenses CollisionSenses => collisionSenses ? collisionSenses : core.GetCoreComponent(ref collisionSenses);
 
-    public PlayerGroundedState(Player player, PlayerStateMachine stateMachine, string animationName) 
-        : base(player, stateMachine, animationName)
+    public PlayerGroundedState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animationName) 
+        : base(player, stateMachine, playerData, animationName)
     {
     }
 
@@ -45,6 +45,7 @@ public class PlayerGroundedState : PlayerState
 
         xInput = player.InputHandler.NormInputX;
         yInput = player.InputHandler.NormInputY;
+        jumpInput = player.InputHandler.JumpInput;
     }
 
     public override void PhysicsUpdate()
