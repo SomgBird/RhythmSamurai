@@ -4,12 +4,18 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
+
     #region StateMachine
     public PlayerStateMachine StateMachine { get; private set; }
     
     [SerializeField] private PlayerData playerData;
+    
     public PlayerIdleState IdleState { get; private set; } 
-    public PlayerRunningState RunningState { get; private set; }
+    public PlayerWalkState WalkState { get; private set; }
+    public PlayerDashState DashState { get; private set; }
+    public PlayerFallState FallState { get; private set; }
+    public PlayerGlideState GlideState { get; private set; }
+    public PlayerJumpState JumpState { get; private set; }
     
 
     #endregion
@@ -30,6 +36,10 @@ public class Player : MonoBehaviour
 
         IdleState = new PlayerIdleState(this, StateMachine, playerData, "idle");
         WalkState = new PlayerWalkState(this, StateMachine, playerData, "walk");
+        DashState = new PlayerDashState(this, StateMachine, playerData, "dash");
+        FallState = new PlayerFallState(this, StateMachine, playerData, "fall");
+        GlideState = new PlayerGlideState(this, StateMachine, playerData, "glide");
+        JumpState = new PlayerJumpState(this, StateMachine, playerData, "jump");
     }
 
     public void Start()
